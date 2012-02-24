@@ -1,0 +1,128 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title></title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<meta name="viewport" content="width=device-width">
+
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<style>
+	body {
+	  padding-top: 60px;
+	  padding-bottom: 40px;
+	}
+    .editor td + td {
+        height: 100px;
+    }
+    .editor div.q {
+        margin-bottom: 2em;
+    }
+
+    textarea {
+        width: 400px;
+        height: 200px;
+	</style>
+	<link rel="stylesheet" href="css/bootstrap-responsive.css">
+	<link rel="stylesheet" href="css/style.css">
+
+	<script src="js/libs/modernizr-2.5.3-respond-1.1.0.min.js"></script>
+</head>
+<body>
+<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+    <div class="container">
+
+      <!-- Main hero unit for a primary marketing message or call to action -->
+      <div class="hero-unit">
+        <p>Want to enter the first <a href='http://www.knightfoundation.org/blogs/knightblog/2012/2/9/announcing-knight-news-challenge-networks/'>Knight News Challenge</a> in 2012?  Well, they've got <a href='http://www.knightfoundation.org/blogs/knightblog/2012/2/23/7-questions-new-knight-news-challenge-application/'>7 questions for you</a>.  And some pretty awesome maximum word counts.  So you can use this collaborative editor to workshop your masterpiece.  No warranties, etc., keep your own backups!!</p>
+        <br />
+        <center>
+            <form style='display: inline-block; margin-left: auto; margin-right: auto;' id='keyform' action='#' method='post'>
+                <table>
+                    <tr>
+                        <td><label for='key'>Enter a secret key for your group:</label></td>
+                        <td><input type='text' id='key' name='key' /></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type='submit' class='btn btn-primary btn-large' value='Enter room' id='keyform_submit' /></td>
+                    </tr>
+                </table>
+            </form>
+        </center>
+      </div>
+      <div class='editor' style='display: none;'>
+          <h2>Entry editor</h2>
+          <p>Share <a href='' id='hashlink'>this link</a> with your collaborators, and edit together, real time.  Come back and edit more later.</p>
+          <div class='q control-group'>
+                <label for='what'>1. What do you propose to do?</label>
+                <textarea id='what'></textarea>
+                <div id='whatcount' class='count'></div>
+          </div>
+          <div class='q control-group'>
+                <label for='others'>2. Is anyone else doing something like this now, and how is your project different?</label>
+                <textarea id='others'></textarea>
+                <div id='otherscount' class='count'></div>
+           </div>
+           <div class='q control-group'>     
+                <label for='network'>3. Describe the network with which you intend to build or work.</label>
+                <textarea id='network'></textarea>
+                <div id='networkcount' class='count'></div>
+            </div>
+            <div class='q control-group'>
+                <label for='why'>4. Why will it work?</label>
+                <textarea id='why'></textarea>
+                <div id='whycount' class='count'></div>
+            </div>
+            <div class='q control-group'> 
+                <label for='who'>5. Who is working on it?</label>
+                <textarea id='who'></textarea>
+                <div id='whocount' class='count'></div>
+            </div>
+            <div class='q control-group'>
+                <label for='done'>6. What part of the project have you already built?</label>
+                <textarea id='done'></textarea>
+                <div id='donecount' class='count'></div>
+            </div>
+            <div class='q control-group'>
+                <label for='after'>7. How will you sustain the project after funding expires?</label>
+                <textarea id='after'></textarea>
+                <div id='aftercount' class='count'></div>
+            </div>
+            <input class='btn btn-primary btn-large' value='Show all' id='showall' />
+        </div>
+        <div id='showallbox' class='modal' style='display: none;'>
+            <div class='modal-header'>
+                <a class='close' data-dismiss='modal'>&times;</a>
+                <h3>Copy &amp; Paste</h3>
+            </div>
+            <div class='modal-body'>
+                <p>Oh yeah...</p>
+            </div>
+        </div>
+      <footer>
+      <p>Written by Charlie DeTar using <a href='https://github.com/josephg/ShareJS'>sharejs</a> and <a href='http://www.initializr.com/'>initializr</a>.  No assurances, no warranties!  Keep backups!</p>
+      <p><a href='https://github.com/yourcelf/roundtable/'>Fork me on github</a>.</p>
+      </footer>
+
+    </div> <!-- /container -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/share/share.js"></script>
+<script src="/share/textarea.js"></script>
+<script src="js/libs/bootstrap/transition.js"></script>
+<script src="js/libs/bootstrap/collapse.js"></script>
+<script src="js/libs/bootstrap/modal.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
