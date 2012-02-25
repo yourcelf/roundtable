@@ -17,6 +17,7 @@ function setKey(groupkey) {
     for (key in limits) {
         (function(key) {
             var el = document.getElementById(key)
+            $(el).css("height", limits[key] / 100 * $(el).height());
             sharejs.open('knc2012.1-' + groupkey + key, 'text', function(error, doc) {
                 if (error) {
                     console.log(error);
@@ -28,6 +29,7 @@ function setKey(groupkey) {
             $("#" + key).keydown();
         })(key);
     }
+    $("#scratchpad").attr("src", "https://pad.tirl.org:444/p/knc2012.1-" + groupkey + "?showLineNumbers=false");
 }
 
 for (key in limits) {
